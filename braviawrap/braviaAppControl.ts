@@ -37,7 +37,7 @@ export class braviaAppControl{
             "id": 1,
             "params": [],
             "version": "1.0"
-            });
+        });
 
         const returnData =this.senderInst.send(jsonData);
 
@@ -51,7 +51,7 @@ export class braviaAppControl{
             "id": 1,
             "params": [],
             "version": "1.0"
-            });
+        });
 
         const returnData = this.senderInst.send(jsonData);
 
@@ -67,7 +67,7 @@ export class braviaAppControl{
             "id": 1,
             "params": [{"encKey":"nobodywilleverseethis>:3"}],
             "version": "1.1"
-            });
+        });
 
         const returnData = this.senderInst.send(jsonData);
 
@@ -81,13 +81,42 @@ export class braviaAppControl{
             "id": 1,
             "params": [],
             "version": "1.0"
-            });
+        });
 
         const returnData = this.senderInst.send(jsonData);
 
         return(returnData);
     }
 
+
+    //outputs all arguments in and out of each method || NOT LISTED IN DOCUMENTATION
+    public getMethodTypes(){
+        const jsonData = JSON.stringify({
+            "method": "getMethodTypes",
+            "id": 1,
+            "params": [""],
+            "version": "1.0"
+        });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
+    }
+
+
+    //Outputs list of unique API method versions || NOT LISTED IN DOCUMENTATION
+    public getVersions(){
+        const jsonData = JSON.stringify({
+            "method": "getVersions",
+            "id": 1,
+            "params": [],
+            "version": "1.0"
+        });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
+    }
 
 
     /*****
@@ -105,9 +134,9 @@ export class braviaAppControl{
             "params": [{
                 "data": "",
                 "uri": appURI
-                }],
+            }],
             "version": "1.0"
-            });
+        });
 
         const returnData =this.senderInst.send(jsonData);
 
@@ -121,13 +150,13 @@ export class braviaAppControl{
         if(useEncryption){
             //NYI - need to implement this and getTextForm encryption
             const jsonData = JSON.stringify({
-            "method": "setTextForm",
-            "id": 1,
-            "params": [{
-                "encKey":"nobodywilleverseethisparttwo",
-                "text":"kbdInput except encrypted. probably will include that as a method in the encryption class, rather than doing it here."
-            }],
-            "version": "1.1"
+                "method": "setTextForm",
+                "id": 1,
+                "params": [{
+                    "encKey":"nobodywilleverseethisparttwo",
+                    "text":"kbdInput except encrypted. probably will include that as a method in the encryption class, rather than doing it here."
+                }],
+                "version": "1.1"
             });
 
             const returnData = this.senderInst.send(jsonData);
@@ -136,10 +165,10 @@ export class braviaAppControl{
 
         }else{
             const jsonData = JSON.stringify({
-            "method": "setTextForm",
-            "id": 1,
-            "params": [kbdInput],
-            "version": "1.0"
+                "method": "setTextForm",
+                "id": 1,
+                "params": [kbdInput],
+                "version": "1.0"
             });
 
             const returnData = this.senderInst.send(jsonData);
@@ -157,7 +186,7 @@ export class braviaAppControl{
             "id": 1,
             "params": [],
             "version": "1.0"
-            });
+        });
 
         const returnData = this.senderInst.send(jsonData);
 
