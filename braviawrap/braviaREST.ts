@@ -31,7 +31,7 @@ export class braviaREST {
 
         //if HTTP response ! in range 200-299, throw an error
         if (!response.ok){
-            const message = "Error: "+response.status;
+            const message = "HTTP-"+response.status;
             throw new Error(message);
         }
 
