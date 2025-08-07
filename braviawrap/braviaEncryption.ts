@@ -25,14 +25,53 @@ export class braviaEncryption{
 
     /*****
      * 
-     * The only function for the "encryption" service (for now >:3)
+     * The only function(s) for the "encryption" service (for now >:3)
      * 
      *****/
 
 
     
     public getPublicKey(){
-        //NYI
+        const jsonData = JSON.stringify({
+            "method": "getPublicKey",
+            "id": 1,
+            "params": [],
+            "version": "1.0"
+        });
+
+        const returnData = this.senderInst.send(jsonData);
+
+        return(returnData);
+    }
+
+
+    //outputs all arguments in and out of each method || NOT LISTED IN DOCUMENTATION
+    public getMethodTypes(){
+        const jsonData = JSON.stringify({
+            "method": "getMethodTypes",
+            "id": 1,
+            "params": [""],
+            "version": "1.0"
+        });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
+    }
+
+
+    //Outputs list of unique API method versions || NOT LISTED IN DOCUMENTATION
+    public getVersions(){
+        const jsonData = JSON.stringify({
+            "method": "getVersions",
+            "id": 1,
+            "params": [],
+            "version": "1.0"
+        });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
     }
 
 }
