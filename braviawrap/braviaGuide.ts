@@ -25,7 +25,7 @@ export class braviaGuide{
 
     /*****
      * 
-     * The only function for the "guide" service
+     * The "only" function for the "guide" service
      * 
      *****/
 
@@ -36,7 +36,52 @@ export class braviaGuide{
             "method": "getSupportedApiInfo",
             "id": 1,
             "params": [{"services": svcListIn}],
-            "version": "1.1"
+            "version": "1.0"
+            });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
+    }
+
+
+    //SIIIIIKE there was one(?) more they didn't list pff || NOT LISTED IN DOCUMENTATION
+    public getServiceProtocols(){
+        const jsonData = JSON.stringify({
+            "method": "getServiceProtocols",
+            "id": 1,
+            "params": [],
+            "version": "1.0"
+            });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
+    }
+
+
+    //outputs all arguments in and out of each method || NOT LISTED IN DOCUMENTATION
+    public getMethodTypes(){
+        const jsonData = JSON.stringify({
+            "method": "getMethodTypes",
+            "id": 1,
+            "params": [""],
+            "version": "1.0"
+            });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
+    }
+
+
+    //Outputs list of unique API method versions || NOT LISTED IN DOCUMENTATION
+    public getVersions(){
+        const jsonData = JSON.stringify({
+            "method": "getVersions",
+            "id": 1,
+            "params": [],
+            "version": "1.0"
             });
 
         const returnData =this.senderInst.send(jsonData);
