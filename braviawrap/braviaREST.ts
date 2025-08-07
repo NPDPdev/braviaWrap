@@ -37,7 +37,7 @@ export class braviaREST {
 
         //returns "result" field of response
         const data = await response.json();
-        return data.result;
+        return data;
 
 
 
