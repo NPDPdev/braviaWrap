@@ -37,7 +37,7 @@ export class braviaGuide{
             "id": 1,
             "params": [{"services": svcListIn}],
             "version": "1.0"
-            });
+        });
 
         const returnData =this.senderInst.send(jsonData);
 
@@ -52,7 +52,7 @@ export class braviaGuide{
             "id": 1,
             "params": [],
             "version": "1.0"
-            });
+        });
 
         const returnData =this.senderInst.send(jsonData);
 
@@ -67,7 +67,7 @@ export class braviaGuide{
             "id": 1,
             "params": [""],
             "version": "1.0"
-            });
+        });
 
         const returnData =this.senderInst.send(jsonData);
 
@@ -82,7 +82,7 @@ export class braviaGuide{
             "id": 1,
             "params": [],
             "version": "1.0"
-            });
+        });
 
         const returnData =this.senderInst.send(jsonData);
 
