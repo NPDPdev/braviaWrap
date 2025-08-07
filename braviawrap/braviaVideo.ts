@@ -25,14 +25,53 @@ export class braviaVideo{
 
     /*****
      * 
-     * The only "get" function for the "video" service
+     * The "only" "get" function for the "video" service
      * 
      *****/
 
 
-    //send request and return output
-    public getPictureQualitySettings(){
-        //NYI
+
+    public getPictureQualitySettings(targetIn?:string){
+        const jsonData = JSON.stringify({
+            "method": "getPictureQualitySettings",
+            "id": 1,
+            "params": [{"target": targetIn}],
+            "version": "1.0"
+        });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
+    }
+
+
+    //outputs all arguments in and out of each method || NOT LISTED IN DOCUMENTATION
+    public getMethodTypes(){
+        const jsonData = JSON.stringify({
+            "method": "getMethodTypes",
+            "id": 1,
+            "params": [""],
+            "version": "1.0"
+        });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
+    }
+
+
+    //Outputs list of unique API method versions || NOT LISTED IN DOCUMENTATION
+    public getVersions(){
+        const jsonData = JSON.stringify({
+            "method": "getVersions",
+            "id": 1,
+            "params": [],
+            "version": "1.0"
+        });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
     }
 
 
@@ -44,8 +83,20 @@ export class braviaVideo{
      *****/
 
     
-    //send request and return output
-    public setPictureQualitySettings(){
-        //NYI
+    
+    public setPictureQualitySettings(targetIn:string, valueIn:string){
+        const jsonData = JSON.stringify({
+            "method": "setPictureQualitySettings",
+            "id": 12,
+            "params": [{"settings": [{
+                "value": valueIn,
+                "target": targetIn
+            }]}],
+            "version": "1.0"
+        });
+
+        const returnData =this.senderInst.send(jsonData);
+
+        return(returnData);
     }
 }
