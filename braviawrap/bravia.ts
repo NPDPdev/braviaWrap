@@ -6,6 +6,7 @@ import { braviaEncryption } from "./braviaEncryption.ts";
 import { braviaSystem } from "./braviaSystem.ts";
 import { braviaVideo } from "./braviaVideo.ts";
 import { braviaVideoScreen } from "./braviaVideoScreen.ts";
+import { braviaCEC } from "./braviaCEC.ts";
 
 
 //Each service's wrapper class should be runnable on its own.
@@ -23,6 +24,7 @@ export class bravia {
     public system: braviaSystem;
     public video: braviaVideo;
     public videoScreen: braviaVideoScreen;
+    public cec:braviaCEC;
     
     
 
@@ -45,6 +47,7 @@ export class bravia {
         this.system = new braviaSystem(this.baseURL,panelPSK);
         this.video = new braviaVideo(this.baseURL,panelPSK);
         this.videoScreen = new braviaVideoScreen(this.baseURL,panelPSK);
+        this.cec = new braviaCEC(this.baseURL,panelPSK);
         
     }
 
