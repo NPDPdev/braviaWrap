@@ -128,10 +128,6 @@ export class braviaAvContent{
     }
 
 
-
-
-
-
     //outputs all arguments in and out of each method || NOT LISTED IN DOCUMENTATION
     public getMethodTypes(){
         const jsonData = JSON.stringify({
